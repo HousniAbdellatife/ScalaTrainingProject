@@ -1,4 +1,9 @@
 package com.lightbend.training.scalatrain
 
-class Train(var number: Int, var kind: String) {
+import scala.collection.immutable.Seq;
+
+case class Train(number: Int, kind: String, schedule: Seq[Station]) {
+  {
+    require(schedule.size == 2, "Schedule must contains at least two elements")
+  }
 }
